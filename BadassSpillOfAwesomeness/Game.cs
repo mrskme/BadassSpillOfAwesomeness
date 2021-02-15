@@ -14,7 +14,6 @@ namespace BadassSpillOfAwesomeness
         public Game()
         {
             levels = new Levels();
-            levels.LevelOne.Platforms.
         }
     }
 }
