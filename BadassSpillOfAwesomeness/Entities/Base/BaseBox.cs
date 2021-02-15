@@ -27,6 +27,7 @@ namespace BadassSpillOfAwesomeness
             StartY = startY; 
             Color = color;
 
+
             Rectangle = new PictureBox();
             Rectangle.Size = new Size(Height, Width);
             Rectangle.Location = new Point(StartX, StartY);

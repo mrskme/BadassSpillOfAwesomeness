@@ -8,12 +8,20 @@ namespace BadassSpillOfAwesomeness
 {
     class Game
     {
-        public Level CurrentLevel;
-        public Levels levels;
+        public GameLevel CurrentGameLevel;
+        public GameLevels GameLevels;
 
         public Game()
         {
-            levels = new Levels();
+            GameLevels = new GameLevels();
+            CurrentGameLevel = GameLevels.All[0];
+
+            CurrentGameLevel.SpawnLevel();
+        }
+
+        public void NextLevel()
+        {
+            CurrentGameLevel = GameLevels.All[/*NextLevelIndex*/0];
         }
     }
 }

@@ -9,13 +9,15 @@ namespace BadassSpillOfAwesomeness
 {
     class Enemies
     {
-        public List<Enemy> Level1Enemies;
+        public List<Enemy> LevelOne;
+        public List<Enemy> LevelTwo;
         public Enemies()
         {
-            Level1Enemies = new List<Enemy>
+            LevelOne = new List<Enemy>
             {
                 new Enemy(20, 20, "bobby", 540, 420, Color.Black),
             };
+            LevelTwo = new List<Enemy>();
 
         }
     }
