@@ -18,6 +18,10 @@ namespace BadassSpillOfAwesomeness
             {
                 new Platform(20,50,"Grass",21,62,Color.ForestGreen),
             };
+            LevelTwo = new List<Platform>
+            {
+                new Platform(255, 232, "Stone", 74, 323, Color.DarkGray)
+            };
         }
 
     }
