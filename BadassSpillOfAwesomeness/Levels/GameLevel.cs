@@ -12,9 +12,9 @@ namespace BadassSpillOfAwesomeness
 
         public void SpawnLevel()
         {
-            foreach (var List in Entities)
+            foreach (var list in Entities)
             {
-                foreach (var box in List)
+                foreach (var box in list)
                 {
                     box.SpawnRectangle();
                 }
