@@ -18,8 +18,8 @@ namespace BadassSpillOfAwesomeness
 
             Entities = new List<List<BaseBox>>
             {
-                //Platforms,
-                //Enemies,
+                Platforms,
+                Enemies,
             };
         }
     }

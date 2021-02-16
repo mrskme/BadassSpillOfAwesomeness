@@ -18,7 +18,10 @@ namespace BadassSpillOfAwesomeness
         {
             _gameLevels = new GameLevels();
             _currentGameLevel = _gameLevels.All[0];
+        }
 
+        public void Run()
+        {
             _currentGameLevel.SpawnLevel();
         }
 

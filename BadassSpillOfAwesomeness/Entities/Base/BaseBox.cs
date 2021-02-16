@@ -10,14 +10,14 @@ namespace BadassSpillOfAwesomeness
 {
     class BaseBox
     {
-        private PictureBox Rectangle;
-        private int Width;
+        private readonly PictureBox _rectangle;
+        private readonly int Width;
         private int Height;
         private string Name;
         private int StartX;
         private int StartY;
         private Color Color;
-        private int SpawnLevel;
+        //private int SpawnLevel;
         public BaseBox( int width, int height, string name, int startX, int startY, Color color)
         {
             Width = width;
@@ -28,15 +28,15 @@ namespace BadassSpillOfAwesomeness
             Color = color;
 
 
-            Rectangle = new PictureBox();
-            Rectangle.Size = new Size(Height, Width);
-            Rectangle.Location = new Point(StartX, StartY);
-            Rectangle.BackColor = Color;
+            _rectangle = new PictureBox();
+            _rectangle.Size = new Size(Height, Width);
+            _rectangle.Location = new Point(StartX, StartY);
+            _rectangle.BackColor = Color;
         }
 
         public void SpawnRectangle()
         {
-            Form2.form2.Controls.Add(Rectangle);
+            Form2.form2.Controls.Add(_rectangle);
         } 
     }
 }
