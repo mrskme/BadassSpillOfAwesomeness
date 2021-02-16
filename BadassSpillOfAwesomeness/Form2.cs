@@ -12,33 +12,29 @@ namespace BadassSpillOfAwesomeness
     public class Form2 : Form
     {
         //private IContainer components;
-        public static Form2 form2 { get; private set; }
+        public static Form2 form { get; private set; }
+        private readonly Game _game;
         public Form2()
         {
-            form2 = this;
+            form = this;
+            _game = new Game();
             InitializeComponents();
         }
 
         public void InitializeComponents()
         {
-            //FormBorderStyle = FormBorderStyle.None; Bruk til å få fram top bar på hover top
-
-            //components = new Container();
-            //AutoScaleMode = AutoScaleMode.Font;
             SetWindowSpesifications();
-            TestSpawnBox();
+            _game.Run();
         }
 
         public void SetWindowSpesifications()
         {
+            //FormBorderStyle = FormBorderStyle.None; Bruk til å få fram top bar på hover top
+
+            //components = new Container();
+            //AutoScaleMode = AutoScaleMode.Font;
             WindowState = FormWindowState.Maximized;
-            ClientSize = new Size(1344, 756);
             Text = "Badass Spill of Awesomeness";
-        }
-        public void TestSpawnBox()
-        {
-            var box = new BaseBox(200, 500, "kåre", 500, 500, Color.Blue);
-            box.SpawnRectangle();
         }
     }
 }

@@ -9,16 +9,24 @@ namespace BadassSpillOfAwesomeness
 {
     class Enemies
     {
-        public List<Enemy> LevelOne;
-        public List<Enemy> LevelTwo;
-        public Enemies()
+        private List<Enemy> _enemies;
+        private readonly List<Enemy> _baseSetup;
+        public Enemies(List<Enemy> enemies)
         {
-            LevelOne = new List<Enemy>
-            {
-                new Enemy(20, 20, "bobby", 540, 420, Color.Black),
-            };
-            LevelTwo = new List<Enemy>();
+            _baseSetup = enemies;
+            Reset();
+        }
+        private void Reset()
+        {
+            _enemies = _baseSetup;
+        }
 
+        public void Move()
+        {
+            foreach (var enemy in _enemies)
+            {
+                
+            }
         }
     }
 }

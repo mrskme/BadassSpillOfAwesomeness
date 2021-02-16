@@ -9,24 +9,25 @@ namespace BadassSpillOfAwesomeness
 {
     class Game
     {
-        private GameLevel _currentGameLevel;
         private readonly GameLevels _gameLevels;
         private UpgradePanel _upgradePanel;
-
+        private readonly PlayerChoserPanel _playerChoserChoserPanel;
+        private Player Player => _playerChoserChoserPanel.ChosenPlayer;
+        private GameLevel CurrentLevel => _gameLevels.Current;
 
         public Game()
         {
             _gameLevels = new GameLevels();
-            _currentGameLevel = _gameLevels.All[0];
+            _playerChoserChoserPanel = new PlayerChoserPanel();
+            _upgradePanel = new UpgradePanel();
         }
 
         public void Run()
         {
-            _currentGameLevel.SpawnLevel();
+            //CurrentLevel.AddPanelToWindow();
+            //CurrentLevel.RemovePanelFromWindow();
+            _playerChoserChoserPanel.AddPanelToWindow();
+            CurrentLevel.AddPanelToWindow(Player);
         }
-
-        public GameLevel NextLevel() =>
-        _gameLevels.All[/*NextLevelIndex*/0];
-        
     }
 }
