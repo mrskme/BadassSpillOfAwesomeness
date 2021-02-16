@@ -22,9 +22,8 @@ namespace BadassSpillOfAwesomeness
             _currentGameLevel.SpawnLevel();
         }
 
-        public void NextLevel()
-        {
-            _currentGameLevel = _gameLevels.All[/*NextLevelIndex*/0];
-        }
+        public GameLevel NextLevel() =>
+        _gameLevels.All[/*NextLevelIndex*/0];
+        
     }
 }
