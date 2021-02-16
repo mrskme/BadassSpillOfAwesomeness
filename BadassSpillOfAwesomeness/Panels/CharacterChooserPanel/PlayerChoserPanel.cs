@@ -18,16 +18,15 @@ namespace BadassSpillOfAwesomeness
         public PlayerChoserPanel()
         {
             Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-
+            BackColor = Color.Aquamarine;
             player1 = new Player(200, 20, "Kåre", 530, 200, Color.Coral);
             player2 = new Player(200, 20, "Bobby", 530, 200, Color.BlueViolet);
             player3 = new Player(200, 20, "Bobbern", 530, 200, Color.DarkOrange);
-            CreatePlayerChoserPanel();
+            CreateButtons();
         }
 
-        public void CreatePlayerChoserPanel()
+        public void CreateButtons()
         {
-            BackColor = Color.Aquamarine;
             Button[] buttons =
             {
                 new Button(Color.Aqua, "Kåre", 300, 200, 150,100, Player1ButtonOnClick),
@@ -42,7 +41,7 @@ namespace BadassSpillOfAwesomeness
             foreach (var button in buttons)
             {
                 Controls.Add(button);
-            }
+            } 
         }
         private void Player1ButtonOnClick(object sender, EventArgs e)
         {
