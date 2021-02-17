@@ -17,46 +17,34 @@ namespace BadassSpillOfAwesomeness
         public GameLevel(List<Platform> platforms, List<Enemy> enemies, Color color)
         {
             BackColor = color;
-            //Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-            Size = new Size(2000,4000);
+            Dock = DockStyle.Fill;
+
             Platforms = new Platforms(platforms);
             Enemies = new Enemies(enemies);
-            AddPlatformsToLevel(platforms);
-            AddEnemiesToLevel(enemies);
-
+            AddPlatformsToPanel(platforms);
+            AddEnemiesToPanel(enemies);
+            //Show();
             //ADD game level to GameView
         }
         public void MoveEverything()
         {
-            if (Player != null) Player.MovePlayer();
+            Player?.MovePlayer();
+            Enemies.Move();
         }
-
-        public void AddPanelToWindow()
-        {
-            Window.window.Controls.Add(this);
-            Window.window.Controls.Add(Player);
-        }
-
-        public void RemovePanelFromWindow()
-        {
-            Window.window.Controls.Remove(this);
-            Window.window.Controls.Remove(Player);
-        }
-
-        public void AddEnemiesToLevel(List<Enemy> enemies)
+        public void AddEnemiesToPanel(List<Enemy> enemies)
         {
             foreach (var enemy in enemies)
             {
                 Controls.Add(enemy);
             }
         }
-        public void AddPlatformsToLevel(List<Platform> platforms)
+        public void AddPlatformsToPanel(List<Platform> platforms)
         {
             foreach (var platform in platforms)
             {
                 Controls.Add(platform);
             }
-        }//addPlatformsInConstructor? 
+        }
 
         //var plist = new List<Platform>();
         //List<BaseBox> blist;

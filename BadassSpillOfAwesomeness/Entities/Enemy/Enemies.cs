@@ -25,7 +25,7 @@ namespace BadassSpillOfAwesomeness
         {
             foreach (var enemy in _enemies)
             {
-                
+                enemy.MoveEnemy();
             }
         }
     }

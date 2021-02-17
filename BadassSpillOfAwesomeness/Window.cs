@@ -24,7 +24,7 @@ namespace BadassSpillOfAwesomeness
         public void InitializeComponents()
         {
             SetWindowSpesifications();
-            _gameView.View();
+            Controls.Add(_gameView);
         }
 
         public void SetWindowSpesifications()
@@ -33,9 +33,16 @@ namespace BadassSpillOfAwesomeness
 
             //components = new Container();
             //AutoScaleMode = AutoScaleMode.Font;
-            Size = MaximumSize;
+            //AutoSizeMode = AutoSizeMode.GrowOnly;
+            //AutoScaleMode = AutoScaleMode.None;
+            //AutoSizeMode = 
+            //MinimumSize = new Size(1400, 1400);
+            //Size = new Size(20000, 20000);
+            //Size = MaximumSize;
+            //Dock = DockStyle.Fill;
             WindowState = FormWindowState.Maximized;
             Text = "Badass Spill of Awesomeness";
+
         }
     }
 }

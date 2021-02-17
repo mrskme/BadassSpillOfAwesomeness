@@ -9,10 +9,15 @@ namespace BadassSpillOfAwesomeness
 {
     class Enemy : BaseBox
     {
-        //hva skal en enemy ha? 
-        public Enemy(int width, int height, string name, int startX, int startY, Color color) : base(width, height, name, startX, startY, color)
+        private int _speed;
+        public Enemy(int speed ,int width, int height, string name, int startX, int startY, Color color) : base(width, height, name, startX, startY, color)
         {
+            _speed = speed;
+        }
 
+        public void MoveEnemy()
+        {
+            Left -= _speed;
         }
     }
 }

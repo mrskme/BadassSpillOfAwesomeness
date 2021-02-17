@@ -14,10 +14,13 @@ namespace BadassSpillOfAwesomeness
         private Player player2;
         private Player player3;
 
-        public static Player ChosenPlayer = null;
+        public static Player ChosenPlayer;
+
+        public event EventHandler<Player> CheckHasChosenCharacter;
+
         public PlayerChoserPanel()
         {
-            Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            Dock = DockStyle.Fill;
             BackColor = Color.Aquamarine;
             player1 = new Player(1,200, 200, "Kåre", 530, 200, Color.Coral);
             player2 = new Player(1, 200, 200, "Bobby", 530, 200, Color.BlueViolet);
@@ -46,17 +49,17 @@ namespace BadassSpillOfAwesomeness
         private void Player1ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player1;
-            //RemovePanelFromWindow();
+            CheckHasChosenCharacter?.Invoke(this,ChosenPlayer);
         }
         private void Player2ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player2;
-            //RemovePanelFromWindow();
+            CheckHasChosenCharacter?.Invoke(this, ChosenPlayer);
         }
         private void Player3ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player3;
-            //RemovePanelFromWindow();
+            CheckHasChosenCharacter?.Invoke(this, ChosenPlayer);
         }
 
         //public void AddPanelToWindow()

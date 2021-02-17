@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace BadassSpillOfAwesomeness
 {
+    [System.ComponentModel.DesignerCategory("")]
     class BaseBox : PictureBox
     {
         private int _width;
