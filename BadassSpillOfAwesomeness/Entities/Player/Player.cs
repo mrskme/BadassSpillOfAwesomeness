@@ -9,8 +9,26 @@ namespace BadassSpillOfAwesomeness
 {
     class Player : BaseBox
     {
-        public Player(int width, int height, string name, int startX, int startY, Color color) : base(width, height, name, startX, startY, color)
+        private int _walkingSpeed;
+        public Player(int walkingSpeed, int width, int height, string name, int startX, int startY, Color color) : base(width, height, name, startX, startY, color)
         {
+            _walkingSpeed = walkingSpeed;
+        }
+        public void MovePlayer()
+        {
+            var oldTop = Top;
+            var oldLeft = Left;
+
+            if (Keyboard.IsKeyDown(Key.A)) Left -= _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.D)) NewRectangle.Left += _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.S)) NewRectangle.Top += _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.W)) NewRectangle.Top -= _walkingSpeed;
+
+            if (IsObjectColliding(this))
+            {
+                NewRectangle.Top = oldTop;
+                NewRectangle.Left = oldLeft;
+            }
         }
     }
 }

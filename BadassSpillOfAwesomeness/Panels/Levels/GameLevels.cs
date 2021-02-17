@@ -14,8 +14,8 @@ namespace BadassSpillOfAwesomeness
         public GameLevel LevelOne;
 
 
-        private int _currentGameIndex = 0;
-        public GameLevel Current => All[_currentGameIndex];
+        private int _currentLevelIndex = 0;
+        public GameLevel Current => All[_currentLevelIndex];
 
         public GameLevels()
         {
@@ -38,12 +38,10 @@ namespace BadassSpillOfAwesomeness
                 new Enemy(50,20,"haha",736,543, Color.Blue),
                 new Enemy(50,20,"SirMuchAlot",300,300, Color.Blue),
             };
-            var levelOne = new GameLevel(platforms, enemies) {BackColor = Color.Aqua};
-            levelOne.AddEnemiesToLevel(enemies);
-            levelOne.AddPlatformsToLevel(platforms);
+            var levelOne = new GameLevel(platforms, enemies, Color.Aqua);
             return levelOne;
         }
         public GameLevel NextLevel() =>
-            All[_currentGameIndex+1];
+            All[_currentLevelIndex+1];
     }
 }

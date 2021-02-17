@@ -14,7 +14,7 @@ namespace BadassSpillOfAwesomeness
         private Player player2;
         private Player player3;
 
-        public Player ChosenPlayer;
+        public static Player ChosenPlayer = null;
         public PlayerChoserPanel()
         {
             Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
@@ -61,12 +61,12 @@ namespace BadassSpillOfAwesomeness
 
         public void AddPanelToWindow()
         {
-            Form2.form.Controls.Add(this);
+            Window.window.Controls.Add(this);
         }
 
         public void RemovePanelFromWindow()
         {
-            Form2.form.Controls.Remove(this);
+            Window.window.Controls.Remove(this);
         }
     }
 }

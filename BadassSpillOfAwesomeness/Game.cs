@@ -12,52 +12,25 @@ namespace BadassSpillOfAwesomeness
     {
         private readonly GameLevels _gameLevels;
         private UpgradePanel _upgradePanel;
-        private readonly PlayerChoserPanel _playerChoserChoserPanel;
-        private Player Player => _playerChoserChoserPanel.ChosenPlayer;
-        private static System.Windows.Forms.Timer _timer;
-        private static System.Windows.Forms.Timer _checkAndSpawnLevelTick;
+        private readonly PlayerChoserPanel _playerChoserPanel;
+        private Player Player => PlayerChoserPanel.ChosenPlayer;
+        private GameLevel Current => _gameLevels.Current;
+        private readonly Timers _timers;
+
+
 
         public Game()
         {
             _gameLevels = new GameLevels();
-            _playerChoserChoserPanel = new PlayerChoserPanel();
+            _playerChoserPanel = new PlayerChoserPanel();
             _upgradePanel = new UpgradePanel();
-            _timer  = new System.Windows.Forms.Timer();
-            _checkAndSpawnLevelTick = new System.Windows.Forms.Timer();
+            _timers = new Timers();
         }
         public void Run()
         {
-            SetGameTimeTick();
-            _playerChoserChoserPanel.AddPanelToWindow();
-        }
-        private void GameTimerTick(Object myObject, EventArgs myEventArgs)
-        {
-            if (Player != null)
-            {
-                _gameLevels.Current.AddPanelToWindow(Player);
-            }
-        }
-        private void SetGameTimeTick()
-        {
-            _timer.Tick += new EventHandler(GameTimerTick);
-            _timer.Interval = 50;
-            _timer.Start();
-        }
-
-        private void SetCheckAndSpawnLevelTick()
-        {
-            _checkAndSpawnLevelTick.Tick += new EventHandler(CheckAndSpawnLevelTick);
-            _timer.Interval = 50;
-            _timer.Start();
-        }
-
-        private void CheckAndSpawnLevelTick(Object myObject, EventArgs myEventArgs)
-        {
-            if (Player != null)
-            {
-                _gameLevels.Current.AddPanelToWindow(Player);
-                _checkAndSpawnLevelTick.Stop();
-            }
+            _timers.GameTimer.Start();
+            _playerChoserPanel.AddPanelToWindow();
+            _timers.SpawnLevelIfCharacterIsPicked.Start();
         }
     }
 }

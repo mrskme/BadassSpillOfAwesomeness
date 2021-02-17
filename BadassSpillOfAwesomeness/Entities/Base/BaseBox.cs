@@ -33,7 +33,7 @@ namespace BadassSpillOfAwesomeness
 
         public void SpawnRectangle()
         {
-            Form2.form.Controls.Add(this);
+            Window.window.Controls.Add(this);
         } 
     }
 }

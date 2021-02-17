@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BadassSpillOfAwesomeness
 {
-    class GameTimer : System.Windows.Forms.Timer
+    class Timer : System.Windows.Forms.Timer
     {
-        public GameTimer(EventHandler onTick, int interval)
+        public Timer(EventHandler onTick, int interval)
         {
             Tick += onTick;
             Interval = interval;
         }
+        
     }
 }

@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace BadassSpillOfAwesomeness
 {
-    public class Form2 : Form
+    public class Window : Form
     {
         //private IContainer components;
-        public static Form2 form { get; private set; }
+        public static Window window { get; private set; }
         private readonly Game _game;
-        public Form2()
+        public Window()
         {
-            form = this;
+            window = this;
             _game = new Game();
             InitializeComponents();
         }
@@ -29,10 +29,11 @@ namespace BadassSpillOfAwesomeness
 
         public void SetWindowSpesifications()
         {
-            //FormBorderStyle = FormBorderStyle.None; Bruk til å få fram top bar på hover top
+            //FormBorderStyle = FormBorderStyle.None; //Bruk til å få fram top bar på hover top
 
             //components = new Container();
             //AutoScaleMode = AutoScaleMode.Font;
+            Size = MaximumSize;
             WindowState = FormWindowState.Maximized;
             Text = "Badass Spill of Awesomeness";
         }

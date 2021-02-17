@@ -12,13 +12,17 @@ namespace BadassSpillOfAwesomeness
     {
         public Platforms Platforms { get; }
         public Enemies Enemies { get; }
-        private Player _player;
+        public Player Player { get; private set; }
 
-        public GameLevel(List<Platform> platforms, List<Enemy> enemies)
+        public GameLevel(List<Platform> platforms, List<Enemy> enemies, Color color)
         {
+            BackColor = color;
+            Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             Platforms = new Platforms(platforms);
             Enemies = new Enemies(enemies);
-            Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left;
+            AddPlatformsToLevel(platforms);
+            AddEnemiesToLevel(enemies);
+
             //ADD game level to window
         }
         //public void MoveEnemies()
@@ -26,17 +30,16 @@ namespace BadassSpillOfAwesomeness
         //    Enemies.Move();
         //}
 
-        public void AddPanelToWindow(Player player)
+        public void AddPanelToWindow()
         {
-            _player = player;
-            Form2.form.Controls.Add(this);
-            Form2.form.Controls.Add(_player);
+            Window.window.Controls.Add(this);
+            Window.window.Controls.Add(Player);
         }
 
         public void RemovePanelFromWindow()
         {
-            Form2.form.Controls.Remove(this);
-            Form2.form.Controls.Remove(_player);
+            Window.window.Controls.Remove(this);
+            Window.window.Controls.Remove(Player);
         }
 
         public void AddEnemiesToLevel(List<Enemy> enemies)
@@ -52,7 +55,8 @@ namespace BadassSpillOfAwesomeness
             {
                 Controls.Add(platform);
             }
-        }
+        }//addPlatformsInConstructor? 
+
         //var plist = new List<Platform>();
         //List<BaseBox> blist;
         ////b = p;
