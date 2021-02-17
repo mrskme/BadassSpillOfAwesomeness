@@ -13,7 +13,6 @@ namespace BadassSpillOfAwesomeness
         public List<GameLevel> All;
         public GameLevel LevelOne;
 
-
         private int _currentLevelIndex = 0;
         public GameLevel Current => All[_currentLevelIndex];
 
@@ -43,5 +42,7 @@ namespace BadassSpillOfAwesomeness
         }
         public GameLevel NextLevel() =>
             All[_currentLevelIndex+1];
+
+        
     }
 }

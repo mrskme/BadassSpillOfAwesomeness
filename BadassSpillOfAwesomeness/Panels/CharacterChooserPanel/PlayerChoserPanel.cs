@@ -19,9 +19,9 @@ namespace BadassSpillOfAwesomeness
         {
             Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             BackColor = Color.Aquamarine;
-            player1 = new Player(200, 20, "Kåre", 530, 200, Color.Coral);
-            player2 = new Player(200, 20, "Bobby", 530, 200, Color.BlueViolet);
-            player3 = new Player(200, 20, "Bobbern", 530, 200, Color.DarkOrange);
+            player1 = new Player(1,200, 200, "Kåre", 530, 200, Color.Coral);
+            player2 = new Player(1, 200, 200, "Bobby", 530, 200, Color.BlueViolet);
+            player3 = new Player(1, 200, 200, "Bobbern", 530, 200, Color.DarkOrange);
             CreateButtons();
         }
 
@@ -46,27 +46,27 @@ namespace BadassSpillOfAwesomeness
         private void Player1ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player1;
-            RemovePanelFromWindow();
+            //RemovePanelFromWindow();
         }
         private void Player2ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player2;
-            RemovePanelFromWindow();
+            //RemovePanelFromWindow();
         }
         private void Player3ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player3;
-            RemovePanelFromWindow();
+            //RemovePanelFromWindow();
         }
 
-        public void AddPanelToWindow()
-        {
-            Window.window.Controls.Add(this);
-        }
+        //public void AddPanelToWindow()
+        //{
+        //    Window.window.Controls.Add(this);
+        //}
 
-        public void RemovePanelFromWindow()
-        {
-            Window.window.Controls.Remove(this);
-        }
+        //public void RemovePanelFromWindow()
+        //{
+        //    Window.window.Controls.Remove(this);
+        //}
     }
 }

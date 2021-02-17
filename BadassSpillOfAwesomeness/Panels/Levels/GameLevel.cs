@@ -12,23 +12,24 @@ namespace BadassSpillOfAwesomeness
     {
         public Platforms Platforms { get; }
         public Enemies Enemies { get; }
-        public Player Player { get; private set; }
+        public Player Player => PlayerChoserPanel.ChosenPlayer;
 
         public GameLevel(List<Platform> platforms, List<Enemy> enemies, Color color)
         {
             BackColor = color;
-            Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            //Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            Size = new Size(2000,4000);
             Platforms = new Platforms(platforms);
             Enemies = new Enemies(enemies);
             AddPlatformsToLevel(platforms);
             AddEnemiesToLevel(enemies);
 
-            //ADD game level to window
+            //ADD game level to GameView
         }
-        //public void MoveEnemies()
-        //{
-        //    Enemies.Move();
-        //}
+        public void MoveEverything()
+        {
+            if (Player != null) Player.MovePlayer();
+        }
 
         public void AddPanelToWindow()
         {

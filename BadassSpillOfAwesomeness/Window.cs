@@ -13,18 +13,18 @@ namespace BadassSpillOfAwesomeness
     {
         //private IContainer components;
         public static Window window { get; private set; }
-        private readonly Game _game;
+        private readonly GameView _gameView;
         public Window()
         {
             window = this;
-            _game = new Game();
+            _gameView = new GameView();
             InitializeComponents();
         }
 
         public void InitializeComponents()
         {
             SetWindowSpesifications();
-            _game.Run();
+            _gameView.View();
         }
 
         public void SetWindowSpesifications()

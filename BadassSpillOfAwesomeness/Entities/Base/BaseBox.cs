@@ -10,30 +10,24 @@ namespace BadassSpillOfAwesomeness
 {
     class BaseBox : PictureBox
     {
-        private readonly int Width;
-        private int Height;
-        private string Name;
-        private int StartX;
-        private int StartY;
-        private Color Color;
+        private int _width;
+        private int _height;
+        private string _name;
+        private readonly int _startX;
+        private readonly int _startY;
+        private readonly Color _color;
         public BaseBox( int width, int height, string name, int startX, int startY, Color color)
         {
-            Width = width;
-            Height = height;
-            Name = name;
-            StartX = startX;
-            StartY = startY; 
-            Color = color;
+            _width = width;
+            _height = height;
+            _name = name;
+            _startX = startX;
+            _startY = startY; 
+            _color = color;
 
-
-            Size = new Size(Height, Width);
-            Location = new Point(StartX, StartY);
-            BackColor = Color;
+            Size = new Size(_height, _width);
+            Location = new Point(_startX, _startY);
+            BackColor = _color;
         }
-
-        public void SpawnRectangle()
-        {
-            Window.window.Controls.Add(this);
-        } 
     }
 }

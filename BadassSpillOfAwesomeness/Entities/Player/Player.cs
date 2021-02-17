@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace BadassSpillOfAwesomeness
 {
@@ -16,19 +17,19 @@ namespace BadassSpillOfAwesomeness
         }
         public void MovePlayer()
         {
-            var oldTop = Top;
-            var oldLeft = Left;
+            //var oldTop = Top;
+            //var oldLeft = Left;
 
             if (Keyboard.IsKeyDown(Key.A)) Left -= _walkingSpeed;
-            if (Keyboard.IsKeyDown(Key.D)) NewRectangle.Left += _walkingSpeed;
-            if (Keyboard.IsKeyDown(Key.S)) NewRectangle.Top += _walkingSpeed;
-            if (Keyboard.IsKeyDown(Key.W)) NewRectangle.Top -= _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.D)) Left += _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.S)) Top += _walkingSpeed;
+            if (Keyboard.IsKeyDown(Key.W)) Top -= _walkingSpeed;
 
-            if (IsObjectColliding(this))
-            {
-                NewRectangle.Top = oldTop;
-                NewRectangle.Left = oldLeft;
-            }
+            //if (IsObjectColliding(this))
+            //{
+            //    NewRectangle.Top = oldTop;
+            //    NewRectangle.Left = oldLeft;
+            //}
         }
     }
 }
