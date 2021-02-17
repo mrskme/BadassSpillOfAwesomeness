@@ -38,10 +38,10 @@ namespace BadassSpillOfAwesomeness
                 new Enemy(50,20,"haha",736,543, Color.Blue),
                 new Enemy(50,20,"SirMuchAlot",300,300, Color.Blue),
             };
-            var gameLevelOne = new GameLevel(platforms, enemies) {BackColor = Color.Aqua};
-            gameLevelOne.AddEnemiesToLevel(enemies);
-            gameLevelOne.AddPlatformsToLevel(platforms);
-            return gameLevelOne;
+            var levelOne = new GameLevel(platforms, enemies) {BackColor = Color.Aqua};
+            levelOne.AddEnemiesToLevel(enemies);
+            levelOne.AddPlatformsToLevel(platforms);
+            return levelOne;
         }
         public GameLevel NextLevel() =>
             All[_currentGameIndex+1];

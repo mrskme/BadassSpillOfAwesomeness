@@ -49,6 +49,7 @@
     <Compile Include="Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Timers\GameTimers.cs" />
     <Compile Include="Panels\CharacterChooserPanel\PlayerChoserPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -77,6 +78,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Panels\UpgradePanel\UpgradePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Timers\GameTimer.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
