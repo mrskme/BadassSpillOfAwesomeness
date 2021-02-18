@@ -23,13 +23,14 @@ namespace BadassSpillOfAwesomeness
             Enemies = new Enemies(enemies);
             AddPlatformsToPanel(platforms);
             AddEnemiesToPanel(enemies);
+            AddPlayerToPanel();
             //Show();
             //ADD game level to GameView
         }
         public void MoveEverything()
         {
             Player?.MovePlayer();
-            Enemies.Move();
+            Enemies?.MoveEnemies();
         }
         public void AddEnemiesToPanel(List<Enemy> enemies)
         {
@@ -46,6 +47,10 @@ namespace BadassSpillOfAwesomeness
             }
         }
 
+        public void AddPlayerToPanel()
+        {
+            Controls.Add(Player);
+        }
         //var plist = new List<Platform>();
         //List<BaseBox> blist;
         ////b = p;

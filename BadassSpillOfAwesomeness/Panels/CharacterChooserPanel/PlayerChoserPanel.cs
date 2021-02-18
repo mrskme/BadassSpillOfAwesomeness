@@ -16,15 +16,15 @@ namespace BadassSpillOfAwesomeness
 
         public static Player ChosenPlayer;
 
-        public event EventHandler<Player> CheckHasChosenCharacter;
+        public event EventHandler<Player> HasChosenCharacterEvent;
 
         public PlayerChoserPanel()
         {
             Dock = DockStyle.Fill;
             BackColor = Color.Aquamarine;
-            player1 = new Player(1,200, 200, "Kåre", 530, 200, Color.Coral);
-            player2 = new Player(1, 200, 200, "Bobby", 530, 200, Color.BlueViolet);
-            player3 = new Player(1, 200, 200, "Bobbern", 530, 200, Color.DarkOrange);
+            player1 = new Player(20,100, 100, "Kåre", 500, 500, Color.Coral);
+            player2 = new Player(10, 200, 200, "Bobby", 500, 500, Color.BlueViolet);
+            player3 = new Player(30, 50, 50, "Bobbern", 500, 500, Color.DarkOrange);
             CreateButtons();
         }
 
@@ -49,17 +49,17 @@ namespace BadassSpillOfAwesomeness
         private void Player1ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player1;
-            CheckHasChosenCharacter?.Invoke(this,ChosenPlayer);
+            HasChosenCharacterEvent?.Invoke(this,ChosenPlayer);
         }
         private void Player2ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player2;
-            CheckHasChosenCharacter?.Invoke(this, ChosenPlayer);
+            HasChosenCharacterEvent?.Invoke(this, ChosenPlayer);
         }
         private void Player3ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player3;
-            CheckHasChosenCharacter?.Invoke(this, ChosenPlayer);
+            HasChosenCharacterEvent?.Invoke(this, ChosenPlayer);
         }
 
         //public void AddPanelToWindow()

@@ -21,7 +21,7 @@ namespace BadassSpillOfAwesomeness
             _enemies = _baseSetup;
         }
 
-        public void Move()
+        public void MoveEnemies()
         {
             foreach (var enemy in _enemies)
             {

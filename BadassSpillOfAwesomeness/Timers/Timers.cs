@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace BadassSpillOfAwesomeness
         public Timers()
         {
             _gamelevels = new GameLevels();
-            GameTimer = new Timer(GameTimerTick, 50);
+            GameTimer = new Timer(GameTimerTick, 16);
         }
         private void GameTimerTick(Object myObject, EventArgs myEventArgs)
         {
