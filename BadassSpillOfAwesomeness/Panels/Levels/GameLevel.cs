@@ -13,6 +13,7 @@ namespace BadassSpillOfAwesomeness
         public Platforms Platforms { get; }
         public Enemies Enemies { get; }
         public Player Player => PlayerChoserPanel.ChosenPlayer;
+        
 
         public GameLevel(List<Platform> platforms, List<Enemy> enemies, Color color)
         {
@@ -23,12 +24,13 @@ namespace BadassSpillOfAwesomeness
             AddPlatformsToPanel(platforms);
             AddEnemiesToPanel(enemies);
             AddPlayerToPanel();
+            
             //Show();
             //ADD game level to GameView
         }
         public void MoveEverything()
         {
-            Player?.MovePlayer();
+            Player?.AlternateMovePlayer(); //denne fucker til windowsize??
             Enemies?.MoveEnemies();
         }
         public void AddEnemiesToPanel(List<Enemy> enemies)
