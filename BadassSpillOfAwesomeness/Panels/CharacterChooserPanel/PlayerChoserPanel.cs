@@ -16,7 +16,7 @@ namespace BadassSpillOfAwesomeness
 
         public static Player ChosenPlayer;
 
-        public event EventHandler<Player> HasChosenCharacterEvent;
+        public event EventHandler<Player> UpdatePanelsEvent;
 
         public PlayerChoserPanel()
         {
@@ -49,17 +49,17 @@ namespace BadassSpillOfAwesomeness
         private void Player1ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player1;
-            HasChosenCharacterEvent?.Invoke(this,ChosenPlayer);
+            UpdatePanelsEvent?.Invoke(this,ChosenPlayer);
         }
         private void Player2ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player2;
-            HasChosenCharacterEvent?.Invoke(this, ChosenPlayer);
+            UpdatePanelsEvent?.Invoke(this, ChosenPlayer);
         }
         private void Player3ButtonOnClick(object sender, EventArgs e)
         {
             ChosenPlayer = player3;
-            HasChosenCharacterEvent?.Invoke(this, ChosenPlayer);
+            UpdatePanelsEvent?.Invoke(this, ChosenPlayer);
         }
 
         //public void AddPanelToWindow()

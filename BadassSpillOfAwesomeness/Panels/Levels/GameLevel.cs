@@ -18,7 +18,6 @@ namespace BadassSpillOfAwesomeness
         {
             BackColor = color;
             Dock = DockStyle.Fill;
-
             Platforms = new Platforms(platforms);
             Enemies = new Enemies(enemies);
             AddPlatformsToPanel(platforms);

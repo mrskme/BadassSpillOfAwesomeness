@@ -18,6 +18,7 @@ namespace BadassSpillOfAwesomeness
 
         public GameLevels()
         {
+
             LevelOne = CreateLevel1();
             All = new List<GameLevel>
             {
