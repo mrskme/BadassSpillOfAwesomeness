@@ -22,7 +22,7 @@ namespace BadassSpillOfAwesomeness
         }
         private void GameTimerTick(Object myObject, EventArgs myEventArgs)
         {
-            Current.MoveEverything(); //denne fucker ting til
+            Current.MoveEverything();
         }
     }
 }

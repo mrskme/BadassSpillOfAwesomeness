@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
+//using System.Windows.Input;
 using System.Windows.Media;
 using Color = System.Drawing.Color;
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
@@ -21,6 +22,7 @@ namespace BadassSpillOfAwesomeness
             _walkingSpeed = walkingSpeed;
             KeyDown += KeyIsDown;
             KeyUp += KeyIsUp;
+            
         }
         public void MovePlayer()
         {
@@ -43,45 +45,49 @@ namespace BadassSpillOfAwesomeness
 
         public void AlternateMovePlayer()
         {
-            if (_moveLeft) Left -= _walkingSpeed;
+            if (_moveLeft)
+            {
+                Left -= _walkingSpeed;
+                BackColor = Color.Red;
+            }
             if (_moveRight) Left += _walkingSpeed;
             if (_moveUp) Top -= _walkingSpeed;
             if (_moveDown) Top += _walkingSpeed;
         }
-        private void KeyIsDown(object sender, KeyEventArgs e)
+        public void KeyIsDown(object sender, KeyEventArgs key)
         {
-            if (e.KeyCode == Keys.A)
+            if (key.KeyCode == Keys.A)
             {
                 _moveLeft = true;
             }
-            if (e.KeyCode == Keys.D) 
+            if (key.KeyCode == Keys.D) 
             {
                 _moveRight = true;
             }
-            if (e.KeyCode == Keys.W)
+            if (key.KeyCode == Keys.W)
             {
                 _moveUp = true;
             }
-            if (e.KeyCode == Keys.S)
+            if (key.KeyCode == Keys.S)
             {
                 _moveDown = true;
             }
         }
-        private void KeyIsUp(object sender, KeyEventArgs e)
+        public void KeyIsUp(object sender, KeyEventArgs key)
         {
-            if (e.KeyCode == Keys.A)
+            if (key.KeyCode == Keys.A)
             {
                 _moveLeft = false;
             }
-            if (e.KeyCode == Keys.D)
+            if (key.KeyCode == Keys.D)
             {
                 _moveRight = false;
             }
-            if (e.KeyCode == Keys.W)
+            if (key.KeyCode == Keys.W)
             {
                 _moveUp = false;
             }
-            if (e.KeyCode == Keys.S)
+            if (key.KeyCode == Keys.S)
             {
                 _moveDown = false;
             }

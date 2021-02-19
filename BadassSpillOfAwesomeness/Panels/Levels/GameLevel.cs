@@ -24,13 +24,15 @@ namespace BadassSpillOfAwesomeness
             AddPlatformsToPanel(platforms);
             AddEnemiesToPanel(enemies);
             AddPlayerToPanel();
-            
+
+
             //Show();
             //ADD game level to GameView
         }
         public void MoveEverything()
         {
-            Player?.AlternateMovePlayer(); //denne fucker til windowsize??
+            Player.AlternateMovePlayer();
+            //Player?.MovePlayer();
             Enemies?.MoveEnemies();
         }
         public void AddEnemiesToPanel(List<Enemy> enemies)
