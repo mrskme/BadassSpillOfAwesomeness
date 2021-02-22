@@ -61,15 +61,5 @@ namespace BadassSpillOfAwesomeness
             ChosenPlayer = player3;
             UpdatePanelsEvent?.Invoke(this, ChosenPlayer);
         }
-
-        //public void AddPanelToWindow()
-        //{
-        //    Window.window.Controls.Add(this);
-        //}
-
-        //public void RemovePanelFromWindow()
-        //{
-        //    Window.window.Controls.Remove(this);
-        //}
     }
 }

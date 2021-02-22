@@ -18,7 +18,6 @@ namespace BadassSpillOfAwesomeness
         public void MoveEnemy()
         {
             Left -= _speed;
-            Update();
         }
     }
 }

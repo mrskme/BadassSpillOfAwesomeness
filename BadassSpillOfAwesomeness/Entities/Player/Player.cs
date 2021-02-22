@@ -22,9 +22,8 @@ namespace BadassSpillOfAwesomeness
             _walkingSpeed = walkingSpeed;
             KeyDown += KeyIsDown;
             KeyUp += KeyIsUp;
-            
         }
-        public void MovePlayer()
+        void MovePlayer()
         {
             //var oldTop = Top;
             //var oldLeft = Left;
